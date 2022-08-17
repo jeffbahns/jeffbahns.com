@@ -14,8 +14,8 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hi I am <a href="https://www.jeffbahns.com">Jeff</a> and you're on my{" "}
-          <a href="https://www.jeffbahns.com">website!</a>
+          Hi I am <a href="https://www.jeffbahns.com">Jeff</a> and you&apos;re
+          on my <a href="https://www.jeffbahns.com">website!</a>
         </h1>
         <p className={styles.description}>
           Quit creeping on me{" "}
