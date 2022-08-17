@@ -70,9 +70,10 @@ export default `<!DOCTYPE html>
 
         <ul id="memberList"></ul>
       </div>
-      <form>
+      <form name="test_form_netlify" netlify>
                  <input type="text" id="fname" name="fname" />
                  <input type="text" id="lname" name="lname" />
+                 <button type="submit">Send</button>
                </form>
              </main>
 
