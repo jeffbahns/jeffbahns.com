@@ -17,12 +17,7 @@ const Home: NextPage = () => {
           Hi I am <a href="https://www.jeffbahns.com">Jeff</a> and you&apos;re
           on my <a href="https://www.jeffbahns.com">website!</a>
         </h1>
-        <p className={styles.description}>
-          Quit creeping on me{" "}
-          <b>
-            <u>Emily</u>
-          </b>
-        </p>
+        <p className={styles.description}>Dev changes</p>
       </main>
 
       <footer className={styles.footer}>
