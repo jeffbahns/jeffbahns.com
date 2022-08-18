@@ -11,7 +11,7 @@ import {
 import Contact from "./Contact"
 
 const Form = ({ children }: { children: any }) => (
-  <form data-netlify="true" name="contact">
+  <form data-netlify="true" name="contact" action="/success" method="POST">
     {children}
   </form>
 )
