@@ -27,10 +27,10 @@ const Home: NextPage = () => {
         {/* Hero section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>
-            Hi, I'm <span className="accent">Jeff</span>
+            Hi, I&apos;m <span className="accent">Jeff</span>
           </h1>
           <p className={styles.description}>
-            I'm a developer who loves creating clean, intuitive digital experiences. 
+            I&apos;m a developer who loves creating clean, intuitive digital experiences. 
             Welcome to my portfolio.
           </p>
           
