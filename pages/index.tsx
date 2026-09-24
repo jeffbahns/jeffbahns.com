@@ -10,13 +10,18 @@ const Home: NextPage = () => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={profile.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="dark light" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={profile.url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={profile.description} />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image" content={`${profile.url}/og.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={title} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <header>
@@ -37,7 +42,7 @@ const Home: NextPage = () => {
             <li key={job.company}>
               <details>
                 <summary className="row">
-                  <span>{job.company}</span>
+                  <span>{job.company}</span>{" "}
                   <span className="dim">{job.years}</span>
                 </summary>
                 <p className="dim">{job.title}</p>
@@ -60,7 +65,7 @@ const Home: NextPage = () => {
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 {project.name}
               </a>{" "}
-              <span className="dim">— {project.blurb}</span>
+              <span className="dim">— {project.blurb}</span>{" "}
               <div className="dim">{project.stack.join(" · ")}</div>
             </li>
           ))}
@@ -72,9 +77,9 @@ const Home: NextPage = () => {
         <div className="row">
           <span>
             {profile.education.degree}, {profile.education.school}
-          </span>
+          </span>{" "}
           <span className="dim">{profile.education.year}</span>
-        </div>
+        </div>{" "}
         <p className="dim">{profile.education.note}</p>
       </section>
 
