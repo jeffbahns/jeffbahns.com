@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { JetBrains_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 
 const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '600'] })
 
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <Component {...pageProps} />
+      <Analytics />
     </>
   )
 }
