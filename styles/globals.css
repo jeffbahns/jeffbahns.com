@@ -1,19 +1,19 @@
 :root {
-  --bg: #111214;
-  --fg: #d7d7d2;
-  --strong: #ffffff;
-  --dim: #85888e;
-  --accent: #f5c26b;
-  --font: var(--font-jetbrains), ui-monospace, Menlo, Consolas, monospace;
+  --bg: #ffffff;
+  --fg: #1f1f1f;
+  --strong: #000000;
+  --dim: #6b6b6b;
+  --accent: #9a5b00;
+  --font: var(--font-dm-mono), ui-monospace, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --bg: #f7f6f2;
-    --fg: #26261f;
-    --strong: #000000;
-    --dim: #6b6b64;
-    --accent: #9a5b00;
+    --bg: #111214;
+    --fg: #d7d7d2;
+    --strong: #ffffff;
+    --dim: #85888e;
+    --accent: #f5c26b;
   }
 }
 
@@ -49,7 +49,7 @@ h2 {
 }
 
 h1 {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--strong);
 }
 
