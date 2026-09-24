@@ -1,112 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root {
+  --bg: #111214;
+  --fg: #d7d7d2;
+  --strong: #ffffff;
+  --dim: #85888e;
+  --accent: #f5c26b;
+  --rule: #26282c;
+  --font: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f6f2;
+    --fg: #26261f;
+    --strong: #000000;
+    --dim: #6b6b64;
+    --accent: #9a5b00;
+    --rule: #e2e0d8;
+  }
+}
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #fff;
-  min-height: 100vh;
-  color: #000;
-  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 72px 16px 96px;
+}
+
+h1,
+h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+  color: var(--strong);
+}
+
+h2 {
+  font-weight: 400;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+.dim {
+  color: var(--dim);
+}
+
+.intro {
+  margin-top: 24px;
+}
+
+.intro p + p {
+  margin-top: 1em;
+}
+
+.section {
+  margin-top: 44px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list > li + li {
+  margin-top: 4px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.row > :last-child {
+  flex-shrink: 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary > :first-child::before {
+  content: "+ ";
+  color: var(--dim);
+}
+
+details[open] > summary > :first-child::before {
+  content: "- ";
+}
+
+summary:hover > :first-child {
+  color: var(--strong);
+}
+
+details > p {
+  margin: 8px 0 0 2ch;
+}
+
+.bullets {
+  margin: 4px 0 16px 2ch;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 2ch;
+  color: var(--fg);
+}
+
+.bullets li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--dim);
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
   text-decoration: none;
+  border-bottom: 1px dotted currentColor;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
+a:hover {
+  border-bottom-style: solid;
 }
 
-::-webkit-scrollbar-track {
-  background: #f5f5f5;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ccc;
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
   border-radius: 2px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-/* Typography */
-.mono {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-}
-
-/* Interactive elements */
-.interactive {
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.interactive:hover {
-  border-color: #000;
-  background: rgba(0, 0, 0, 0.02);
-}
-
-/* Accent colors */
-.accent {
-  color: #666;
-}
-
-.accent-bg {
-  background-color: #666;
-  color: #fff;
-}
-
-.accent-border {
-  border-color: #666;
-}
-
-/* Utility classes */
-.text-sm { font-size: 0.875rem; }
-.text-base { font-size: 1rem; }
-.text-lg { font-size: 1.125rem; }
-.text-xl { font-size: 1.25rem; }
-.text-2xl { font-size: 1.5rem; }
-.text-3xl { font-size: 1.875rem; }
-.text-4xl { font-size: 2.25rem; }
-
-.font-light { font-weight: 300; }
-.font-normal { font-weight: 400; }
-.font-medium { font-weight: 500; }
-.font-semibold { font-weight: 600; }

@@ -1,112 +1,99 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
+import { profile } from "../data/profile"
+
+const title = `${profile.name} · Full-stack engineer`
 
 const Home: NextPage = () => {
-  const handleCardClick = (title: string) => {
-    console.log(`Clicked on ${title}`)
-    // Add your interactive logic here
-  }
-
   return (
-    <div className={styles.container}>
+    <main className="page">
       <Head>
-        <title>Jeff Bahns - Developer</title>
-        <meta name="description" content="Jeff Bahns - A developer passionate about creating clean, user-friendly digital experiences" />
-        <meta name="keywords" content="Jeff Bahns, developer, web development, React, Next.js" />
+        <title>{title}</title>
+        <meta name="description" content={profile.description} />
+        <meta name="color-scheme" content="dark light" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={profile.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={profile.description} />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
-      {/* Header */}
-      <header className={styles.header}>
-        <h1 className={styles.logo}>JEFF BAHNS</h1>
-        <p className={styles.tagline}>DEVELOPER</p>
+      <header>
+        <h1>{profile.name}</h1>
+        <p className="dim">{profile.tagline}</p>
       </header>
 
-      {/* Main content */}
-      <main className={styles.main}>
-        {/* Hero section */}
-        <section className={styles.hero}>
-          <h1 className={styles.title}>
-            Hi, I&apos;m <span className="accent">Jeff</span>
-          </h1>
-          <p className={styles.description}>
-            I&apos;m a developer who loves creating clean, intuitive digital experiences. 
-            Welcome to my portfolio.
-          </p>
-          
-          <a 
-            href="https://www.linkedin.com/in/jeff-bahns/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            View My Work
-          </a>
-        </section>
+      <section className="intro">
+        {profile.intro.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </section>
 
-        {/* Interactive cards */}
-        <section className={styles.cardsGrid}>
-          <div 
-            className={styles.card + ' ' + styles.interactive}
-            onClick={() => handleCardClick('Development')}
-          >
-            <div className={styles.cardIcon}>DEV</div>
-            <h3 className={styles.cardTitle}>Development</h3>
-            <p className={styles.cardDescription}>
-              Building clean, efficient web applications with modern technologies
-            </p>
-          </div>
+      <section className="section">
+        <h2>Work</h2>
+        <ul className="list">
+          {profile.jobs.map((job) => (
+            <li key={job.company}>
+              <details>
+                <summary className="row">
+                  <span>{job.company}</span>
+                  <span className="dim">{job.years}</span>
+                </summary>
+                <p className="dim">{job.title}</p>
+                <ul className="bullets">
+                  {job.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-          <div 
-            className={styles.card + ' ' + styles.interactive}
-            onClick={() => handleCardClick('Design')}
-          >
-            <div className={styles.cardIcon}>UI</div>
-            <h3 className={styles.cardTitle}>Design</h3>
-            <p className={styles.cardDescription}>
-              Creating intuitive user interfaces that prioritize user experience
-            </p>
-          </div>
+      <section className="section">
+        <h2>Projects</h2>
+        <ul className="list">
+          {profile.projects.map((project) => (
+            <li key={project.name}>
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                {project.name}
+              </a>{" "}
+              <span className="dim">— {project.blurb}</span>
+              <div className="dim">{project.stack.join(" · ")}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-          <div 
-            className={styles.card + ' ' + styles.interactive}
-            onClick={() => handleCardClick('Problem Solving')}
-          >
-            <div className={styles.cardIcon}>SOLVE</div>
-            <h3 className={styles.cardTitle}>Problem Solving</h3>
-            <p className={styles.cardDescription}>
-              Tackling complex challenges with thoughtful, scalable solutions
-            </p>
-          </div>
-        </section>
+      <section className="section">
+        <h2>Education</h2>
+        <div className="row">
+          <span>
+            {profile.education.degree}, {profile.education.school}
+          </span>
+          <span className="dim">{profile.education.year}</span>
+        </div>
+        <p className="dim">{profile.education.note}</p>
+      </section>
 
-        {/* Skills showcase */}
-        <section className={styles.skillsSection}>
-          <h2 className={styles.skillsTitle}>
-            Skills & Technologies
-          </h2>
-          <div className={styles.skillsGrid}>
-            {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker', 'GraphQL'].map((skill, index) => (
-              <span 
-                key={skill}
-                className={styles.skillTag}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <p>
-          Built with Next.js • 
-          <a href="https://github.com/jeffbahns" target="_blank" rel="noopener noreferrer"> GitHub</a>
+      <section className="section">
+        <h2>Elsewhere</h2>
+        <p className="links">
+          {profile.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              {...(link.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {link.label}
+            </a>
+          ))}
         </p>
-        <p>© 2024 Jeff Bahns</p>
-      </footer>
-    </div>
+      </section>
+    </main>
   )
 }
 
