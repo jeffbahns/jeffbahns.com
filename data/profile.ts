@@ -38,12 +38,12 @@ export type Profile = {
 
 export const profile: Profile = {
   name: "Jeff Bahns",
-  tagline: "Full-stack engineer · San Francisco Bay Area",
+  tagline: "Full-stack engineer · San Francisco Bay Area · Open to remote",
   description:
     "Full-stack engineer building Node.js services and React/TypeScript frontends, from data model to UI.",
   url: "https://jeffbahns.com",
   intro: [
-    "I build web apps end to end: Node.js services, React/TypeScript frontends, and the data model in between. Most recently that meant a secure document platform at Charles River Laboratories serving 3,500+ enterprise lab clients. I'm fluent with AI-assisted tools like Claude Code.",
+    "I build web apps end to end: Node.js services, React/TypeScript frontends, and the data model in between. Most recently that meant a secure document platform at Charles River Laboratories serving 3,500+ enterprise lab clients. I work spec-first with Claude Code: write the design, plan the tasks, let agents implement, review every change.",
     "After eight straight years of shipping software, I took 2025 to travel South America, Europe, and Asia. Now I'm looking for my next role.",
   ],
   jobs: [
