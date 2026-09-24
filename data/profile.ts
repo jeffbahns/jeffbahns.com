@@ -43,7 +43,7 @@ export const profile: Profile = {
     "Full-stack engineer building Node.js services and React/TypeScript frontends, from data model to UI.",
   url: "https://jeffbahns.com",
   intro: [
-    "I build web apps end to end: Node.js services, React/TypeScript frontends, and the data model in between. Most recently that meant a secure document platform at Charles River Laboratories serving 3,500+ enterprise lab clients. I work daily with AI-assisted tools like Claude Code.",
+    "I build web apps end to end: Node.js services, React/TypeScript frontends, and the data model in between. Most recently that meant a secure document platform at Charles River Laboratories serving 3,500+ enterprise lab clients. I'm fluent with AI-assisted tools like Claude Code.",
     "After eight straight years of shipping software, I took 2025 to travel South America, Europe, and Asia. Now I'm looking for my next role.",
   ],
   jobs: [
@@ -52,7 +52,7 @@ export const profile: Profile = {
       title: "Full Stack Developer",
       years: "2021–25",
       bullets: [
-        "Designed, built, and owned the document sync microservice: event-driven M-Files webhooks moving several thousand regulated files a day from lab source to M-Files to Apollo.",
+        "Designed, built, and owned the document sync microservice: event-driven M-Files webhooks moving regulated files from lab source to M-Files to Apollo, handling several thousand transfers daily.",
         "Built features for Apollo, a secure document platform serving 3,500+ enterprise lab clients and 20,000+ regulated study records.",
         "Built responsive React/TypeScript frontends for research teams; shipped with Docker and Azure DevOps CI/CD.",
       ],
