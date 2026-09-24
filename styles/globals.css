@@ -1,13 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
-
 :root {
   --bg: #111214;
   --fg: #d7d7d2;
   --strong: #ffffff;
   --dim: #85888e;
   --accent: #f5c26b;
-  --rule: #26282c;
-  --font: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --font: var(--font-jetbrains), ui-monospace, Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -17,7 +14,6 @@
     --strong: #000000;
     --dim: #6b6b64;
     --accent: #9a5b00;
-    --rule: #e2e0d8;
   }
 }
 

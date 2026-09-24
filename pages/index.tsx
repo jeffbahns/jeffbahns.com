@@ -11,6 +11,7 @@ const Home: NextPage = () => {
         <title>{title}</title>
         <meta name="description" content={profile.description} />
         <meta name="color-scheme" content="dark light" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={profile.url} />
         <meta property="og:title" content={title} />
