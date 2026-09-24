@@ -1,6 +1,6 @@
 # jeffbahns.com
 
-Personal site. Next.js 14 (pages router), deployed on Vercel from `master`.
+Personal site. Next.js 16 (pages router), deployed on Vercel from `master`.
 
 ## Run locally
 
